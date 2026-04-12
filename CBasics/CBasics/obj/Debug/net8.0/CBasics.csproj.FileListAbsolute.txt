@@ -1,0 +1,15 @@
+C:\Users\user\source\repos\h-othman1515\C-Basics\CBasics\CBasics\bin\Debug\net8.0\CBasics.exe
+C:\Users\user\source\repos\h-othman1515\C-Basics\CBasics\CBasics\bin\Debug\net8.0\CBasics.deps.json
+C:\Users\user\source\repos\h-othman1515\C-Basics\CBasics\CBasics\bin\Debug\net8.0\CBasics.runtimeconfig.json
+C:\Users\user\source\repos\h-othman1515\C-Basics\CBasics\CBasics\bin\Debug\net8.0\CBasics.dll
+C:\Users\user\source\repos\h-othman1515\C-Basics\CBasics\CBasics\bin\Debug\net8.0\CBasics.pdb
+C:\Users\user\source\repos\h-othman1515\C-Basics\CBasics\CBasics\obj\Debug\net8.0\CBasics.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\source\repos\h-othman1515\C-Basics\CBasics\CBasics\obj\Debug\net8.0\CBasics.AssemblyInfoInputs.cache
+C:\Users\user\source\repos\h-othman1515\C-Basics\CBasics\CBasics\obj\Debug\net8.0\CBasics.AssemblyInfo.cs
+C:\Users\user\source\repos\h-othman1515\C-Basics\CBasics\CBasics\obj\Debug\net8.0\CBasics.csproj.CoreCompileInputs.cache
+C:\Users\user\source\repos\h-othman1515\C-Basics\CBasics\CBasics\obj\Debug\net8.0\CBasics.sourcelink.json
+C:\Users\user\source\repos\h-othman1515\C-Basics\CBasics\CBasics\obj\Debug\net8.0\CBasics.dll
+C:\Users\user\source\repos\h-othman1515\C-Basics\CBasics\CBasics\obj\Debug\net8.0\refint\CBasics.dll
+C:\Users\user\source\repos\h-othman1515\C-Basics\CBasics\CBasics\obj\Debug\net8.0\CBasics.pdb
+C:\Users\user\source\repos\h-othman1515\C-Basics\CBasics\CBasics\obj\Debug\net8.0\CBasics.genruntimeconfig.cache
+C:\Users\user\source\repos\h-othman1515\C-Basics\CBasics\CBasics\obj\Debug\net8.0\ref\CBasics.dll
