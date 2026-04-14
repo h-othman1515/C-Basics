@@ -381,235 +381,355 @@ class Program
         //    Console.WriteLine("Invalid rating. Please enter a value between 0 and 100.");
         //}
 
-        // Task 2
-        Console.WriteLine("Enter GPA: ");
-        double GPA = Convert.ToDouble(Console.ReadLine());
+        //// Task 2
+        //Console.WriteLine("Enter GPA: ");
+        //double GPA = Convert.ToDouble(Console.ReadLine());
 
-        Console.WriteLine("Enter your English Test result: ");
-        int testResult = Convert.ToInt32(Console.ReadLine());
-        bool isPassed = false;
-        if (testResult >= 50)
-        {
-            isPassed = true;
-        }
-        else
-        {
-            isPassed = false;
-        }
+        //Console.WriteLine("Enter your English Test result: ");
+        //int testResult = Convert.ToInt32(Console.ReadLine());
+        //bool isPassed = false;
+        //if (testResult >= 50)
+        //{
+        //    isPassed = true;
+        //}
+        //else
+        //{
+        //    isPassed = false;
+        //}
 
-        Console.WriteLine("Do you Have a special recommendation? (Yes/No)");
-        string recommendation = Console.ReadLine().ToLower();
-        bool isRecommendation;
-        if (recommendation == "yes")
-        {
-            isRecommendation = true;
-        }
-        else
-        {
-            isRecommendation = false;
-        }
+        //Console.WriteLine("Do you Have a special recommendation? (Yes/No)");
+        //string recommendation = Console.ReadLine().ToLower();
+        //bool isRecommendation;
+        //if (recommendation == "yes")
+        //{
+        //    isRecommendation = true;
+        //}
+        //else
+        //{
+        //    isRecommendation = false;
+        //}
 
-        if (isRecommendation == true || (GPA >= 85 && isPassed == true))
-        {
-            Console.WriteLine("A student is eligible for university admission");
-        }
-        else
-        {
-            Console.WriteLine("A student is NOT eligible for university admission");
-        }
+        //if (isRecommendation == true || (GPA >= 85 && isPassed == true))
+        //{
+        //    Console.WriteLine("A student is eligible for university admission");
+        //}
+        //else
+        //{
+        //    Console.WriteLine("A student is NOT eligible for university admission");
+        //}
 
-        // Task 3
-        Console.Write("Enter package weight (kg): ");
-        double weight = double.Parse(Console.ReadLine());
+        //// Task 3
+        //Console.Write("Enter package weight (kg): ");
+        //double weight = double.Parse(Console.ReadLine());
 
-        if (weight <= 1)
-        {
-            Console.WriteLine("Delivery Cost: $5");
-        }
-        else if (weight <= 5)
-        {
-            Console.WriteLine("Delivery Cost: $10");
-        }
-        else if (weight <= 10)
-        {
-            Console.WriteLine("Delivery Cost: $20");
-        }
-        else
-        {
-            Console.WriteLine("Delivery Cost: $50");
-            Console.WriteLine("Warning! Heavy package!");
-        }
+        //if (weight <= 1)
+        //{
+        //    Console.WriteLine("Delivery Cost: $5");
+        //}
+        //else if (weight <= 5)
+        //{
+        //    Console.WriteLine("Delivery Cost: $10");
+        //}
+        //else if (weight <= 10)
+        //{
+        //    Console.WriteLine("Delivery Cost: $20");
+        //}
+        //else
+        //{
+        //    Console.WriteLine("Delivery Cost: $50");
+        //    Console.WriteLine("Warning! Heavy package!");
+        //}
 
-        // Task 4
-        string correctUsername = "admin";
-        string correctPassword = "1234";
-        int maxAttempts = 3;
-        int attempts = 0;
+        //// Task 4
+        //string correctUsername = "admin";
+        //string correctPassword = "1234";
+        //int maxAttempts = 3;
+        //int attempts = 0;
 
-        while (attempts < maxAttempts)
+        //while (attempts < maxAttempts)
+        //{
+        //    Console.Write("Enter username: ");
+        //    string username = Console.ReadLine();
+
+        //    Console.Write("Enter password: ");
+        //    string password = Console.ReadLine();
+
+        //    if (username == correctUsername && password == correctPassword)
+        //    {
+        //        Console.WriteLine("✅ Login successful! Welcome.");
+        //        return;
+        //    }
+        //    else
+        //    {
+        //        attempts++;
+        //        int remaining = maxAttempts - attempts;
+
+        //        if (remaining > 0)
+        //            Console.WriteLine("Invalid credentials. " + remaining + "attempt(s) remaining.");
+        //    }
+        //}
+
+        //Console.WriteLine("Account is locked. Too many failed attempts.");
+
+        //// ================= Switch Statements – Advanced Questions =================
+        //// Task 1
+        //Console.WriteLine("1. Burger ($5)");
+        //Console.WriteLine("2. Pizza  ($8)");
+        //Console.WriteLine("3. Pasta  ($7)");
+        //Console.WriteLine("4. Salad  ($4)");
+        //Console.Write("Choose an option (1-4): ");
+
+        //int mrnuChoice = Convert.ToInt32(Console.ReadLine());
+        //switch (mrnuChoice)
+        //{
+        //    case 1:
+        //        Console.WriteLine("Burger ($5)");
+        //        break;
+        //    case 2:
+        //        Console.WriteLine("Pizza  ($8)");
+        //        break;
+        //    case 3:
+        //        Console.WriteLine("Pasta  ($7)");
+        //        break;
+        //    case 4:
+        //        Console.WriteLine("Salad  ($4)");
+        //        break;
+
+        //    default:
+        //        Console.WriteLine("Invalid Number");
+        //        break;
+        //}
+
+        //// Task 2
+        //Console.Write("Enter your grade (A, B, C, D, F): ");
+        //string grade = Console.ReadLine().ToUpper().Trim();
+
+        //switch (grade)
+        //{
+        //    case "A":
+        //        Console.WriteLine("Grade A , Excellent");
+        //        break;
+
+        //    case "B":
+        //        Console.WriteLine("Grade B , Very Good");
+        //        break;
+
+        //    case "C":
+        //        Console.WriteLine("Grade C , Good");
+        //        break;
+
+        //    case "D":
+        //        Console.WriteLine("Grade D , Pass");
+        //        break;
+
+        //    case "F":
+        //        Console.WriteLine("Grade F, Fail");
+        //        break;
+
+        //    default:
+        //        Console.WriteLine("Invalid grade.");
+        //        break;
+        //}
+
+        //// Task 3
+        //Console.WriteLine("1. Check Balance");
+        //Console.WriteLine("2. Deposit Money");
+        //Console.WriteLine("3. Withdraw Money");
+        //Console.WriteLine("4. Exit");
+        //Console.Write("Choose an option (1-4): ");
+        //int ATMChoice = Convert.ToInt32(Console.ReadLine());
+
+        //bool atmOP = true;
+        //while (atmOP)
+        //{
+        //    double balance = 2500.77;
+        //    switch (ATMChoice)
+        //    {
+        //        case 1:
+        //            Console.WriteLine("Your Balance: " + balance);
+        //            break;
+        //        case 2:
+        //            Console.WriteLine("Enter the amount you want to add: ");
+        //            double addMoney = Convert.ToDouble(Console.ReadLine());
+        //            balance = balance + addMoney;
+        //            Console.WriteLine("Your New Total Balance: " + balance);
+        //            break;
+        //        case 3:
+        //            Console.WriteLine("Enter the amount you want to Take: ");
+        //            double getMoney = Convert.ToDouble(Console.ReadLine());
+        //            balance = balance - getMoney;
+        //            Console.WriteLine("Your New Total Balance: " + balance);
+        //            break;
+        //        case 4:
+        //            Console.WriteLine("Come Agian!!");
+        //            atmOP = false;
+        //            break;
+
+        //        default:
+        //            Console.WriteLine("Invalid Operation");
+        //            break;
+        //    }
+        //}
+
+        ////Task 4
+        //Console.Write("Enter first number: ");
+        //double num1 = double.Parse(Console.ReadLine());
+
+        //Console.Write("Enter second number: ");
+        //double num2 = double.Parse(Console.ReadLine());
+
+        //Console.WriteLine("\n1. Addition");
+        //Console.WriteLine("2. Subtraction");
+        //Console.WriteLine("3. Multiplication");
+        //Console.WriteLine("4. Division");
+        //Console.Write("Choose operation (1-4): ");
+        //string choice = Console.ReadLine();
+
+        //switch (choice)
+        //{
+        //    case "1":
+        //        Console.WriteLine($"Result: {num1} + {num2} = {num1 + num2}");
+        //        break;
+
+        //    case "2":
+        //        Console.WriteLine($"Result: {num1} - {num2} = {num1 - num2}");
+        //        break;
+
+        //    case "3":
+        //        Console.WriteLine($"Result: {num1} * {num2} = {num1 * num2}");
+        //        break;
+
+        //    case "4":
+        //        if (num2 == 0)
+        //            Console.WriteLine("Error: Cannot divide by zero.");
+        //        else
+        //            Console.WriteLine($"Result: {num1} / {num2} = {num1 / num2}");
+        //        break;
+
+        //    default:
+        //        Console.WriteLine("Invalid choice. Please select 1 to 4.");
+        //        break;
+        //}
+
+        // ================================= C#(Array,String,Loops) =================================
+        // =========================  Task 1: Analyze an Array with Loops =========================
+        Console.WriteLine("=========== Task 1 ===========");
+        int[] integers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        int even = 0;
+        int odd = 0;
+        int sum = 0;
+
+        for (int i = 0; i < integers.Length; i++)
         {
-            Console.Write("Enter username: ");
-            string username = Console.ReadLine();
-
-            Console.Write("Enter password: ");
-            string password = Console.ReadLine();
-
-            if (username == correctUsername && password == correctPassword)
+            if (integers[i] % 2 == 0)
             {
-                Console.WriteLine("✅ Login successful! Welcome.");
-                return;
+                even++;
             }
-            else
+            else if (integers[i] % 2 != 0)
             {
-                attempts++;
-                int remaining = maxAttempts - attempts;
-
-                if (remaining > 0)
-                    Console.WriteLine("Invalid credentials. " + remaining + "attempt(s) remaining.");
+                odd++;
             }
+            sum = sum + integers[i];
         }
 
-        Console.WriteLine("Account is locked. Too many failed attempts.");
-
-        // ================= Switch Statements – Advanced Questions =================
-        // Task 1
-        Console.WriteLine("1. Burger ($5)");
-        Console.WriteLine("2. Pizza  ($8)");
-        Console.WriteLine("3. Pasta  ($7)");
-        Console.WriteLine("4. Salad  ($4)");
-        Console.Write("Choose an option (1-4): ");
-
-        int mrnuChoice = Convert.ToInt32(Console.ReadLine());
-        switch (mrnuChoice)
+        // for 2
+        double avg = sum / integers.Length;
+        int[] newInt = new int[integers.Length];
+        int index = 0;
+        for (int i = 0; i < newInt.Length; i++)
         {
-            case 1:
-                Console.WriteLine("Burger ($5)");
-                break;
-            case 2:
-                Console.WriteLine("Pizza  ($8)");
-                break;
-            case 3:
-                Console.WriteLine("Pasta  ($7)");
-                break;
-            case 4:
-                Console.WriteLine("Salad  ($4)");
-                break;
-
-            default:
-                Console.WriteLine("Invalid Number");
-                break;
-        }
-
-        // Task 2
-        Console.Write("Enter your grade (A, B, C, D, F): ");
-        string grade = Console.ReadLine().ToUpper().Trim();
-
-        switch (grade)
-        {
-            case "A":
-                Console.WriteLine("Grade A , Excellent");
-                break;
-
-            case "B":
-                Console.WriteLine("Grade B , Very Good");
-                break;
-
-            case "C":
-                Console.WriteLine("Grade C , Good");
-                break;
-
-            case "D":
-                Console.WriteLine("Grade D , Pass");
-                break;
-
-            case "F":
-                Console.WriteLine("Grade F, Fail");
-                break;
-
-            default:
-                Console.WriteLine("Invalid grade.");
-                break;
-        }
-
-        // Task 3
-        Console.WriteLine("1. Check Balance");
-        Console.WriteLine("2. Deposit Money");
-        Console.WriteLine("3. Withdraw Money");
-        Console.WriteLine("4. Exit");
-        Console.Write("Choose an option (1-4): ");
-        int ATMChoice = Convert.ToInt32(Console.ReadLine());
-
-        bool atmOP = true;
-        while (atmOP)
-        {
-            double balance = 2500.77;
-            switch (ATMChoice)
+            if (integers[i] > avg)
             {
-                case 1:
-                    Console.WriteLine("Your Balance: " + balance);
-                    break;
-                case 2:
-                    Console.WriteLine("Enter the amount you want to add: ");
-                    double addMoney = Convert.ToDouble(Console.ReadLine());
-                    balance = balance + addMoney;
-                    Console.WriteLine("Your New Total Balance: " + balance);
-                    break;
-                case 3:
-                    Console.WriteLine("Enter the amount you want to Take: ");
-                    double getMoney = Convert.ToDouble(Console.ReadLine());
-                    balance = balance - getMoney;
-                    Console.WriteLine("Your New Total Balance: " + balance);
-                    break;
-                case 4:
-                    Console.WriteLine("Come Agian!!");
-                    atmOP = false;
-                    break;
+                newInt[index++] = integers[i];
+            }
+        }
+        Console.WriteLine("The Sum of all numbers: " + sum);
+        Console.WriteLine("The Count of Even numbers: " + even);
+        Console.WriteLine("The Count of Odd numbers: " + odd);
+        Console.WriteLine("The AVG of All numbers: " + avg);
+        Console.WriteLine("Numbers greater than average: [");
+        for (int i = 0; i < index; i++)
+        {
+            Console.Write(newInt[i] + ",");
+        }
 
-                default:
-                    Console.WriteLine("Invalid Operation");
-                    break;
+        // =========================  Task 2: Find the Largest Number in an Array =========================
+        Console.WriteLine("\n=========== Task 2 ===========");
+        int[] numbers = [12, 45, 7, 23, 56, 19];
+        int max = numbers[0];
+        for (int i = 0; i < numbers.Length; i++)
+        {
+            if (numbers[i] > max)
+            {
+                max = numbers[i];
+            }
+        }
+        Console.WriteLine("Largest Number: " + max);
+
+        // =========================  Task 3 =========================
+        Console.WriteLine("=========== Task 3 ===========");
+        for (int i = 1; i <= 10; i++)
+        {
+            if (i % 2 == 0)
+            {
+                Console.Write(i + ",");
             }
         }
 
-        //Task 4
-        Console.Write("Enter first number: ");
-        double num1 = double.Parse(Console.ReadLine());
-
-        Console.Write("Enter second number: ");
-        double num2 = double.Parse(Console.ReadLine());
-
-        Console.WriteLine("\n1. Addition");
-        Console.WriteLine("2. Subtraction");
-        Console.WriteLine("3. Multiplication");
-        Console.WriteLine("4. Division");
-        Console.Write("Choose operation (1-4): ");
-        string choice = Console.ReadLine();
-
-        switch (choice)
+        // =========================  Task 4: Data Conversion Using Convert =========================
+        Console.WriteLine("\n=========== Task 4 ===========");
+        try
         {
-            case "1":
-                Console.WriteLine($"Result: {num1} + {num2} = {num1 + num2}");
-                break;
+            Console.WriteLine("What is your Full Name?");
+            string Fullname = Console.ReadLine();
+            Console.WriteLine("How Old Are You?");
+            int age = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("How much is your Height? (in meter e.x: 1.75m)");
+            double height = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Are you Employed? (true / false)");
+            bool IsEmployed = Convert.ToBoolean(Console.ReadLine());
 
-            case "2":
-                Console.WriteLine($"Result: {num1} - {num2} = {num1 - num2}");
-                break;
-
-            case "3":
-                Console.WriteLine($"Result: {num1} * {num2} = {num1 * num2}");
-                break;
-
-            case "4":
-                if (num2 == 0)
-                    Console.WriteLine("Error: Cannot divide by zero.");
-                else
-                    Console.WriteLine($"Result: {num1} / {num2} = {num1 / num2}");
-                break;
-
-            default:
-                Console.WriteLine("Invalid choice. Please select 1 to 4.");
-                break;
+            Console.WriteLine("--- User Profile ---");
+            Console.WriteLine("Name: " + Fullname);
+            Console.WriteLine("Age: " + age);
+            Console.WriteLine("Height: " + height);
+            Console.WriteLine("Is Employed? " + IsEmployed);
+        }
+        catch
+        {
+            Console.WriteLine("Invalid Data Type!");
         }
 
+        // =========================  Task 5: Strings =========================
+        Console.WriteLine("=========== Task 5 ===========");
+        Console.WriteLine("Enter Your name:");
+        string name = Console.ReadLine();
+        Console.WriteLine("Name Lower Case: " + name.ToLower());
+        Console.WriteLine("Name Upper Case : " + name.ToUpper());
+
+
+        Console.WriteLine("Enter Your Age: ");
+        int age5 = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine($"My name is {name} and I am {age5} years old.");
+
+        Console.WriteLine($"The First Letter of your name {name[0]}");
+
+        Console.WriteLine("Name: " + name);
+        Console.WriteLine("Age: " + age5);
+
+        // =========================  Task – Break & Continue =========================
+        Console.WriteLine("=========== Break & Continue ===========");
+        for (int i = 1; i < 10; i++)
+        {
+            if (i % 3 == 0)
+            {
+                continue;
+            }
+            if (i == 8)
+            {
+                break;
+            }
+            Console.WriteLine(i);
+        }
     }
 }
