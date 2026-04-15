@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 
 class Program
 {
@@ -613,123 +614,435 @@ class Program
 
         // ================================= C#(Array,String,Loops) =================================
         // =========================  Task 1: Analyze an Array with Loops =========================
+        //Console.WriteLine("=========== Task 1 ===========");
+        //int[] integers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        //int even = 0;
+        //int odd = 0;
+        //int sum = 0;
+
+        //for (int i = 0; i < integers.Length; i++)
+        //{
+        //    if (integers[i] % 2 == 0)
+        //    {
+        //        even++;
+        //    }
+        //    else if (integers[i] % 2 != 0)
+        //    {
+        //        odd++;
+        //    }
+        //    sum = sum + integers[i];
+        //}
+
+        //// for 2
+        //double avg = sum / integers.Length;
+        //int[] newInt = new int[integers.Length];
+        //int index = 0;
+        //for (int i = 0; i < newInt.Length; i++)
+        //{
+        //    if (integers[i] > avg)
+        //    {
+        //        newInt[index++] = integers[i];
+        //    }
+        //}
+        //Console.WriteLine("The Sum of all numbers: " + sum);
+        //Console.WriteLine("The Count of Even numbers: " + even);
+        //Console.WriteLine("The Count of Odd numbers: " + odd);
+        //Console.WriteLine("The AVG of All numbers: " + avg);
+        //Console.WriteLine("Numbers greater than average: [");
+        //for (int i = 0; i < index; i++)
+        //{
+        //    Console.Write(newInt[i] + ",");
+        //}
+
+        //// =========================  Task 2: Find the Largest Number in an Array =========================
+        //Console.WriteLine("\n=========== Task 2 ===========");
+        //int[] numbers = [12, 45, 7, 23, 56, 19];
+        //int max = numbers[0];
+        //for (int i = 0; i < numbers.Length; i++)
+        //{
+        //    if (numbers[i] > max)
+        //    {
+        //        max = numbers[i];
+        //    }
+        //}
+        //Console.WriteLine("Largest Number: " + max);
+
+        //// =========================  Task 3 =========================
+        //Console.WriteLine("=========== Task 3 ===========");
+        //for (int i = 1; i <= 10; i++)
+        //{
+        //    if (i % 2 == 0)
+        //    {
+        //        Console.Write(i + ",");
+        //    }
+        //}
+
+        //// =========================  Task 4: Data Conversion Using Convert =========================
+        //Console.WriteLine("\n=========== Task 4 ===========");
+        //try
+        //{
+        //    Console.WriteLine("What is your Full Name?");
+        //    string Fullname = Console.ReadLine();
+        //    Console.WriteLine("How Old Are You?");
+        //    int age = Convert.ToInt32(Console.ReadLine());
+        //    Console.WriteLine("How much is your Height? (in meter e.x: 1.75m)");
+        //    double height = Convert.ToDouble(Console.ReadLine());
+        //    Console.WriteLine("Are you Employed? (true / false)");
+        //    bool IsEmployed = Convert.ToBoolean(Console.ReadLine());
+
+        //    Console.WriteLine("--- User Profile ---");
+        //    Console.WriteLine("Name: " + Fullname);
+        //    Console.WriteLine("Age: " + age);
+        //    Console.WriteLine("Height: " + height);
+        //    Console.WriteLine("Is Employed? " + IsEmployed);
+        //}
+        //catch
+        //{
+        //    Console.WriteLine("Invalid Data Type!");
+        //}
+
+        //// =========================  Task 5: Strings =========================
+        //Console.WriteLine("=========== Task 5 ===========");
+        //Console.WriteLine("Enter Your name:");
+        //string name = Console.ReadLine();
+        //Console.WriteLine("Name Lower Case: " + name.ToLower());
+        //Console.WriteLine("Name Upper Case : " + name.ToUpper());
+
+        //Console.WriteLine("Enter Your Age: ");
+        //int age5 = Convert.ToInt32(Console.ReadLine());
+        //Console.WriteLine($"My name is {name} and I am {age5} years old.");
+
+        //Console.WriteLine($"The First Letter of your name {name[0]}");
+
+        //Console.WriteLine("Name: " + name);
+        //Console.WriteLine("Age: " + age5);
+
+        //// =========================  Task – Break & Continue =========================
+        //Console.WriteLine("=========== Break & Continue ===========");
+        //for (int i = 1; i < 10; i++)
+        //{
+        //    if (i % 3 == 0)
+        //    {
+        //        continue;
+        //    }
+        //    if (i == 8)
+        //    {
+        //        break;
+        //    }
+        //    Console.WriteLine(i);
+        //}
+
+        // =========================  C# Task - (Loops,String,Array) 30# =========================
+        // task 1: ZigZag Numbers
+        //Console.WriteLine("=========== Task 1 ===========");
+        //int n = 5;
+        //for (int i = 1; i <= n; i++)
+        //{
+        //    if (i % 2 != 0) // odd
+        //    {
+        //        for (int j = 1; j <= i; j++)
+        //            Console.Write(j);
+        //    }
+        //    else // even
+        //    {
+        //        for (int j = i; j >= 1; j--)
+        //            Console.Write(j);
+        //    }
+
+        //    Console.WriteLine();
+        //}
+
+        //// task 2: Mirror Number Pattern
+        //Console.WriteLine("=========== Task 2 ===========");
+        //n = 4;
+        //for (int r = 1; r <= n; r++)
+        //{
+        //    // left
+        //    for (int i = 1; i <= r; i++)
+        //        Console.Write(i);
+        //    //Console.Write(" ");
+
+        //    //// middle space
+        //    for (int s = 0; s < 2 * (n - r); s++)
+        //        Console.Write(' ');
+
+        //    // right
+        //    for (int i = r; i >= 1; i--)
+        //        Console.Write(i);
+
+        //    Console.WriteLine();
+        //}
+
+        //// task 3: Centered Number Pyramid
+        //Console.WriteLine("=========== Task 3 ===========");
+        //n = 4;
+
+        //for (int r = 1; r <= n; r++)
+        //{
+        //    //  the space
+        //    for (int i = 1; i <= n - r; i++)
+        //    {
+        //        Console.Write(" ");
+        //    }
+
+        //    //  increasing numbers [from 1 to r]
+        //    for (int j = 1; j <= r; j++)
+        //    {
+        //        Console.Write(j);
+        //    }
+
+        //    // decreasing numbers [from r-1 to 1]
+        //    for (int j = r - 1; j >= 1; j--)
+        //    {
+        //        Console.Write(j);
+        //    }
+
+        //    // Move to the next line
+        //    Console.WriteLine();
+        //}
+
+        //// task 4: Skip Numbers Pattern
+        //Console.WriteLine("=========== Task 4 ===========");
+        //n = 5;
+        //for (int i = 1; i <= n; i++)
+        //{
+        //    for (int j = 1; j < i; j++)
+        //    {
+        //        Console.Write(2 * j - 1);
+        //    }
+        //    Console.WriteLine();
+        //}
+
+        //// task 5: Row Sum Pattern
+        //Console.WriteLine("=========== Task 5 ===========");
+        //int n = 4;
+        //int sum = 1;
+        //for (int i = 1; i <= n; i++)
+        //{
+        //    for (int j = 0; j < i; j++)
+        //    {
+        //        Console.Write(sum + " "); // 1 22 444 8888
+        //    }
+        //    Console.WriteLine();
+        //    sum = sum + sum; // 2 4 8
+        //}
+
+        //// task 6: Alternating Direction Triangle
+        //Console.WriteLine("=========== Task 6 ===========");
+        //n = 5;
+        //for (int i = 1; i <= n; i++)
+        //{
+        //    if (i % 2 != 0) // odd
+        //    {
+        //        for (int j = 1; j <= i; j++)
+        //            Console.Write(j);
+        //    }
+        //    else // even
+        //    {
+        //        for (int j = i; j >= 1; j--)
+        //            Console.Write(j);
+        //    }
+
+        //    Console.WriteLine();
+        //}
+
+        //// task 7:  Hollow Pyramid Numbers
+        //Console.WriteLine("=========== Task 7 ===========");
+        //n = 4;
+        //for (int i = 1; i <= n; i++)
+        //{
+        //    //  the space
+        //    for (int j = 1; j <= n - i; j++)
+        //    {
+        //        Console.Write(" ");
+        //    }
+
+        //    int totalColumns = 2 * i - 1;
+        //    for (int j = 1; j <= totalColumns; j++)
+        //    {
+        //        if (j == 1 || j == totalColumns || i == n)
+        //        {
+        //            Console.Write("1");
+        //        }
+        //        else
+        //        {
+        //            Console.Write(" ");
+        //        }
+        //    }
+        //    // Move to the next line
+        //    Console.WriteLine();
+        //}
+
+        //// task 8: Diagonal Cross Pattern
+        //Console.WriteLine("=========== Task 8 ===========");
+        //n = 5;
+        //for (int i = 1; i <= n; i++)
+        //{
+        //    for (int j = 1; j <= n; j++)
+        //    {
+        //        if (j == i || j == n - i + 1)
+        //        {
+        //            Console.Write(i);
+        //        }
+        //        else
+        //        {
+        //            Console.Write(" ");
+        //        }
+        //    }
+        //    // Move to the next line
+        //    Console.WriteLine();
+        //}
+
+        //// task 9: Incremental Blocks
+        //Console.WriteLine("=========== Task 9 ===========");
+        //n = 4;
+        //int current_number = 1;
+
+        //// rows i = row number
+        //for (int i = 1; i < n; i++)
+        //{
+        //    // cols, run i times
+        //    for (int j = 0; j < i; j++)
+        //    {
+        //        Console.Write(current_number + " ");
+        //        current_number++;
+        //    }
+        //    Console.WriteLine();
+        //}
+
+        //// task 10: Pattern with Gaps
+        //Console.WriteLine("=========== Task 10 ===========");
+        //n = 5;
+        //// i = row
+        //for (int i = 1; i <= n; i++)
+        //{
+        //    // col = j
+        //    for (int j = 1; j <= i; j++)
+        //    {
+        //        if (j == 1 || j == i || i == n)
+        //        {
+        //            Console.Write("1");
+        //        }
+        //        else
+        //        {
+        //            Console.Write(" ");
+        //        }
+        //    }
+        //    // Move to the next line
+        //    Console.WriteLine();
+        //}
+
+        // ========================= Arrays =========================
+        // task 1: First Non-Repeating Subarray
         Console.WriteLine("=========== Task 1 ===========");
-        int[] integers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-        int even = 0;
-        int odd = 0;
-        int sum = 0;
-
-        for (int i = 0; i < integers.Length; i++)
+        int[] numbers = [1, 2, 1, 3, 4];
+        for (int i = 0; i < numbers.Length - 1; i++)
         {
-            if (integers[i] % 2 == 0)
+            if (numbers[i] != numbers[i + 1])
             {
-                even++;
-            }
-            else if (integers[i] % 2 != 0)
-            {
-                odd++;
-            }
-            sum = sum + integers[i];
-        }
-
-        // for 2
-        double avg = sum / integers.Length;
-        int[] newInt = new int[integers.Length];
-        int index = 0;
-        for (int i = 0; i < newInt.Length; i++)
-        {
-            if (integers[i] > avg)
-            {
-                newInt[index++] = integers[i];
-            }
-        }
-        Console.WriteLine("The Sum of all numbers: " + sum);
-        Console.WriteLine("The Count of Even numbers: " + even);
-        Console.WriteLine("The Count of Odd numbers: " + odd);
-        Console.WriteLine("The AVG of All numbers: " + avg);
-        Console.WriteLine("Numbers greater than average: [");
-        for (int i = 0; i < index; i++)
-        {
-            Console.Write(newInt[i] + ",");
-        }
-
-        // =========================  Task 2: Find the Largest Number in an Array =========================
-        Console.WriteLine("\n=========== Task 2 ===========");
-        int[] numbers = [12, 45, 7, 23, 56, 19];
-        int max = numbers[0];
-        for (int i = 0; i < numbers.Length; i++)
-        {
-            if (numbers[i] > max)
-            {
-                max = numbers[i];
-            }
-        }
-        Console.WriteLine("Largest Number: " + max);
-
-        // =========================  Task 3 =========================
-        Console.WriteLine("=========== Task 3 ===========");
-        for (int i = 1; i <= 10; i++)
-        {
-            if (i % 2 == 0)
-            {
-                Console.Write(i + ",");
-            }
-        }
-
-        // =========================  Task 4: Data Conversion Using Convert =========================
-        Console.WriteLine("\n=========== Task 4 ===========");
-        try
-        {
-            Console.WriteLine("What is your Full Name?");
-            string Fullname = Console.ReadLine();
-            Console.WriteLine("How Old Are You?");
-            int age = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("How much is your Height? (in meter e.x: 1.75m)");
-            double height = Convert.ToDouble(Console.ReadLine());
-            Console.WriteLine("Are you Employed? (true / false)");
-            bool IsEmployed = Convert.ToBoolean(Console.ReadLine());
-
-            Console.WriteLine("--- User Profile ---");
-            Console.WriteLine("Name: " + Fullname);
-            Console.WriteLine("Age: " + age);
-            Console.WriteLine("Height: " + height);
-            Console.WriteLine("Is Employed? " + IsEmployed);
-        }
-        catch
-        {
-            Console.WriteLine("Invalid Data Type!");
-        }
-
-        // =========================  Task 5: Strings =========================
-        Console.WriteLine("=========== Task 5 ===========");
-        Console.WriteLine("Enter Your name:");
-        string name = Console.ReadLine();
-        Console.WriteLine("Name Lower Case: " + name.ToLower());
-        Console.WriteLine("Name Upper Case : " + name.ToUpper());
-
-
-        Console.WriteLine("Enter Your Age: ");
-        int age5 = Convert.ToInt32(Console.ReadLine());
-        Console.WriteLine($"My name is {name} and I am {age5} years old.");
-
-        Console.WriteLine($"The First Letter of your name {name[0]}");
-
-        Console.WriteLine("Name: " + name);
-        Console.WriteLine("Age: " + age5);
-
-        // =========================  Task – Break & Continue =========================
-        Console.WriteLine("=========== Break & Continue ===========");
-        for (int i = 1; i < 10; i++)
-        {
-            if (i % 3 == 0)
-            {
-                continue;
-            }
-            if (i == 8)
-            {
+                Console.WriteLine("[" + numbers[i + 1] + "," + numbers[i] + "]");
                 break;
             }
-            Console.WriteLine(i);
+
         }
+
+        // task 2: Equal Distance Elements
+        //Console.WriteLine("=========== Task 2 ===========");
+        //int index;
+        //List<int> indexes = new List<int>();
+        //for (int i = 0; i < indexes.Count; i++)
+        //{
+        //    for (int j = 0; j < i; j++)
+        //    {
+
+        //    }
+        //}
+
+
+        // task 3: First Non-Repeating Subarray
+        //Console.WriteLine("=========== Task 3 ===========");
+        //int[] mainArr = [1, 1, 2, 2, 3, 1];
+
+        //List<List<int>> itemList = new List<List<int>>();
+
+        //List<int> currentGroup = new List<int> { mainArr[0] };
+
+        //for (int i = 1; i < mainArr.Length; i++)
+        //{
+        //    if (mainArr[i] == mainArr[i - 1])
+        //    {
+        //        currentGroup.Add(mainArr[i]);
+        //    }
+        //    else
+        //    {
+        //        itemList.Add(currentGroup);
+        //        currentGroup = new List<int> { mainArr[i] };
+        //    }
+
+        //}
+        //itemList.Add(currentGroup);
+        //foreach (var item in itemList)
+        //{
+        //    Console.Write("[" + string.Join(", ", item) + "]");
+        //}
+
+        //// Task 7: Progressive Difference
+        //Console.WriteLine("\n=========== Task 7 ===========");
+        //List<int> result = new List<int>();
+        //int[] arr = [5, 7, 10];
+        //int[] newArr = new int [5];
+        //result.Add(arr[0]);
+        //for (int i = 1; i < arr.Length; i++)
+        //{
+        //    newArr[i] = arr[i] - arr[i - 1];
+        //    result.Add(newArr[i]);
+        //}
+        //Console.Write("[");
+        //foreach (var item in result)
+        //{
+        //    Console.Write(string.Join(" ",item) + ",");
+        //}
+        //Console.Write("]");
+
+        // ========================= Strings =========================
+        // task 6: Longest Repeating Block
+        Console.WriteLine("\n=========== Task 6 ===========");
+        string letters = "aaabbccccd";
+        int maxCount = 0;
+        int currentCount = 1;
+
+        for (int i = 1; i < letters.Length; i++)
+        {
+            if (letters[i] == letters[i - 1])
+            {
+                currentCount++;
+            }
+            else
+            {
+                if (currentCount > maxCount)
+                {
+                    maxCount = currentCount;
+                }
+                currentCount = 1;
+            }
+        }
+        if (currentCount > maxCount)
+        {
+            maxCount = currentCount;
+        }
+        Console.WriteLine("Longest block length: " + maxCount);
+
+        // task 7: Shift Characters
+        Console.WriteLine("\n=========== Task 7 ===========");
+        string alpha = "abc";
+        string res_alpha = "";
+
+        foreach (char c in alpha)
+        {
+            char nextChar = (char)(c + 1);
+            res_alpha += nextChar;
+        }
+        Console.WriteLine("Original Alpha: " + alpha);
+        Console.WriteLine("Result Alpha: " + res_alpha);
     }
 }
