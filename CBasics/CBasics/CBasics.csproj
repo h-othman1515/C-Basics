@@ -5,7 +5,7 @@
 		<TargetFramework>net8.0</TargetFramework>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
-		<StartupObject>CBasics.Methods_List_LINQ_LinkedList</StartupObject>
+		<StartupObject>CBasics.discordTasks</StartupObject>
 	</PropertyGroup>
 
 </Project>
