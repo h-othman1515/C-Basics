@@ -7,13 +7,13 @@ using System.Text.RegularExpressions;
 
 namespace CBasics
 {
-    internal class discordTasks
+    internal class ProblemSolving_Tasks
     {
         static void Main()
         {
             // ======================================= File: Function_1_.pdf =======================================
             // ======================================= Task 1 – Problem Solving =======================================
-            Console.WriteLine("================ Task 1: Problem Solving ================");
+            Console.WriteLine("======== Task 1: Problem Solving ========");
 
             // ===== Q1: Minutes to Seconds =====
             Console.WriteLine("\n======== Q1: Minutes to Seconds ========");
@@ -50,23 +50,10 @@ namespace CBasics
                 Console.Write(s + " ");  // madrasa
             Console.WriteLine();
 
-            // ===== Q7: Power Element by Index =====
-            Console.WriteLine("\n======== Q7: Power Element by Index ========");
-            int[] nums7 = { 44, 5, 4, 3, 2, 10 };
-            double[] result7 = PowerElementIndex(nums7);
-            foreach (double num in result7)
-                Console.Write(num + " ");  // 0 5 16 27 16 100000
-            Console.WriteLine();
-
             // ===== Q8: Multiplication Using Sum =====
             Console.WriteLine("\n======== Q8: Multiplication Using Sum ========");
             Console.WriteLine(Multiplication2(5, 4));   // 20
             Console.WriteLine(Multiplication2(2, 8));   // 16
-
-            // ===== Q9: Multiply Range =====
-            Console.WriteLine("\n======== Q9: Multiply Range ========");
-            Console.WriteLine(Muti2(4, 5));   // 20
-            Console.WriteLine(Muti2(3, 6));   // 360
 
             // ===== Q10: Average of Array =====
             Console.WriteLine("\n======== Q10: Average of Array ========");
@@ -78,7 +65,7 @@ namespace CBasics
 
             // ======================================= File: Function_2_.pdf =======================================
             // ======================================= Task 2 – Problem Solving =======================================
-            Console.WriteLine("\n================ Task 2: Problem Solving ================");
+            Console.WriteLine("\n======== Task 2: Problem Solving ========");
 
             // ===== Q1: Days Between Dates =====
             Console.WriteLine("\n======== Q1: Days Between Dates ========");
@@ -108,20 +95,13 @@ namespace CBasics
 
             // ======================================= File: Function_3_.pdf =======================================
             // ======================================= Task 3 – Problem Solving =======================================
-            Console.WriteLine("\n================ Task 3: Problem Solving ================");
+            Console.WriteLine("\n======== Task 3: Problem Solving ========");
 
             // ===== Q1: Add(n)(m) =====
             Console.WriteLine("\n======== Q1: Add(n)(m) ========");
             Console.WriteLine(Add(10)(20));     // 30
             Console.WriteLine(Add(0)(20));      // 20
             Console.WriteLine(Add(-30)(80));    // 50
-
-            // ===== Q2: Remove Leading/Trailing Zeros =====
-            Console.WriteLine("\n======== Q2: Remove Leading/Trailing Zeros ========");
-            Console.WriteLine(RemoveLeadingTrailing("230.000"));  // 230
-            Console.WriteLine(RemoveLeadingTrailing("00402"));    // 402
-            Console.WriteLine(RemoveLeadingTrailing("03.1400"));  // 3.14
-            Console.WriteLine(RemoveLeadingTrailing("30"));       // 30
 
             // ===== Q3: Second Largest =====
             Console.WriteLine("\n======== Q3: Second Largest ========");
@@ -157,18 +137,6 @@ namespace CBasics
             Console.WriteLine(CountTrue(new bool[] { false, false, false, false }));        // 0
             Console.WriteLine(CountTrue(new bool[] { }));                                   // 0
 
-            // ===== Q9: Capitals to Front =====
-            Console.WriteLine("\n======== Q9: Capitals to Front ========");
-            Console.WriteLine(CapToFront("hApPy"));       // APhpy
-            Console.WriteLine(CapToFront("moveMENT"));    // MENTmove
-            Console.WriteLine(CapToFront("shOrtCAKE"));   // OCAKEshrt
-
-            // ===== Q10: Match Last Item =====
-            Console.WriteLine("\n======== Q10: Match Last Item ========");
-            Console.WriteLine(MatchLastItem(new object[] { "rsq", "6hi", "g", "rsq6hig" }));         // True
-            Console.WriteLine(MatchLastItem(new object[] { 1, 1, 1, "11" }));                         // False
-            Console.WriteLine(MatchLastItem(new object[] { 8, "thunder", true, "8thundertrue" }));    // True
-
             // ===== Q11: Find NaN =====
             Console.WriteLine("\n======== Q11: Find NaN ========");
             Console.WriteLine(FindNaN(new double[] { 1, 2, double.NaN }));              // 2
@@ -180,17 +148,6 @@ namespace CBasics
             int[] noDup1 = RemoveDups(new int[] { 1, 0, 1, 0 });
             Console.WriteLine("[" + string.Join(", ", noDup1) + "]");    // [1, 0]
 
-            // ===== Q13: Convert Time =====
-            Console.WriteLine("\n======== Q13: Convert Time ========");
-            Console.WriteLine(ConvertTime("07:05:45PM"));  // 19:05:45
-            Console.WriteLine(ConvertTime("12:40:22AM"));  // 00:40:22
-            Console.WriteLine(ConvertTime("12:45:54PM"));  // 12:45:54
-
-            // ===== Q14: Remove Last Vowel =====
-            Console.WriteLine("\n======== Q14: Remove Last Vowel ========");
-            Console.WriteLine(RemoveLastVowel("Those who dare to fail miserably can achieve greatly."));
-            // Thos wh dar t fal miserbly cn achiev gretly.
-
             // ===== Q15: Sum of Cubes =====
             Console.WriteLine("\n======== Q15: Sum of Cubes ========");
             Console.WriteLine(SumOfCubes(new int[] { 1, 5, 9 }));    // 855
@@ -200,7 +157,7 @@ namespace CBasics
 
             // ======================================= File: Task_4__C_.docx =======================================
             // ======================================= Task 4 – Methods =======================================
-            Console.WriteLine("\n================ Task 4: Methods ================");
+            Console.WriteLine("\n======== Task 4: Methods ========");
 
             // ===== Q1: Sum and Average of 10 Numbers =====
             Console.WriteLine("\n======== Q1: Sum & Average ========");
@@ -246,14 +203,9 @@ namespace CBasics
             Console.WriteLine(IsPrime(7));    // True
             Console.WriteLine(IsPrime(10));   // False
 
-            // ===== Q10: Word Count (no extension methods) =====
-            Console.WriteLine("\n======== Q10: Word Count ========");
-            Console.WriteLine(WordCount("Hello world how are you"));  // 5
-
-
             // ======================================= File: Task_5__C_.docx =======================================
             // ======================================= Task 5 – OOP =======================================
-            Console.WriteLine("\n================ Task 5: OOP ================");
+            Console.WriteLine("\n======== Task 5: OOP ========");
 
             // ===== Q1: MyClass Initialized =====
             Console.WriteLine("\n======== Q1: MyClass ========");
@@ -275,13 +227,6 @@ namespace CBasics
             ArraySorter sorter = new ArraySorter();
             int[] arrayToSort = { 11, -2, 4, 35, 0, 8, -9 };
             sorter.SortAndDisplay(arrayToSort);
-
-            // ===== Q5: Date Difference Class =====
-            Console.WriteLine("\n======== Q5: Date Difference Class ========");
-            DateDiff dateDiff = new DateDiff();
-            DateTime date1 = new DateTime(1981, 11, 03);
-            DateTime date2 = new DateTime(2013, 09, 04);
-            dateDiff.DisplayDifference(date1, date2);
 
             // ===== Q6: String to Date Class =====
             Console.WriteLine("\n======== Q6: String to Date Class ========");
@@ -341,30 +286,12 @@ namespace CBasics
             return result.ToArray();
         }
 
-        // ===== Q7 =====
-        static double[] PowerElementIndex(int[] nums)
-        {
-            double[] result = new double[nums.Length];
-            for (int i = 0; i < nums.Length; i++)
-                result[i] = Math.Pow(nums[i], i);
-            return result;
-        }
-
         // ===== Q8 =====
         static int Multiplication2(int a, int b)
         {
             int result = 0;
             for (int i = 0; i < b; i++)
                 result += a;
-            return result;
-        }
-
-        // ===== Q9 =====
-        static long Muti2(int a, int b)
-        {
-            long result = a;
-            for (int i = a + 1; i <= b; i++)
-                result *= i;
             return result;
         }
 
@@ -443,15 +370,6 @@ namespace CBasics
             return m => n + m;
         }
 
-        // ===== Q2 =====
-        static string RemoveLeadingTrailing(string n)
-        {
-            // Parse as decimal then convert back to string to strip zeros naturally
-            if (decimal.TryParse(n, NumberStyles.Any, CultureInfo.InvariantCulture, out decimal value))
-                return value.ToString(CultureInfo.InvariantCulture);
-            return n;
-        }
-
         // ===== Q3 =====
         static int SecondLargest(int[] arr)
         {
@@ -516,29 +434,6 @@ namespace CBasics
             return count;
         }
 
-        // ===== Q9 =====
-        static string CapToFront(string word)
-        {
-            StringBuilder caps = new StringBuilder();
-            StringBuilder lower = new StringBuilder();
-            foreach (char c in word)
-            {
-                if (char.IsUpper(c)) caps.Append(c);
-                else lower.Append(c);
-            }
-            return caps.ToString() + lower.ToString();
-        }
-
-        // ===== Q10 =====
-        static bool MatchLastItem(object[] arr)
-        {
-            string last = arr[arr.Length - 1].ToString();
-            StringBuilder combined = new StringBuilder();
-            for (int i = 0; i < arr.Length - 1; i++)
-                combined.Append(arr[i].ToString());
-            return last == combined.ToString();
-        }
-
         // ===== Q11 =====
         static int FindNaN(double[] arr)
         {
@@ -559,44 +454,6 @@ namespace CBasics
                     result.Add(num);
             }
             return result.ToArray();
-        }
-
-        // ===== Q13 =====
-        static string ConvertTime(string time)
-        {
-            // Format: HH:MM:SSAM or HH:MM:SSPM
-            string period = time.Substring(time.Length - 2);  // AM or PM
-            string timePart = time.Substring(0, time.Length - 2);
-            string[] parts = timePart.Split(':');
-            int hours = int.Parse(parts[0]);
-            string minutes = parts[1];
-            string seconds = parts[2];
-
-            if (period == "AM")
-                hours = hours == 12 ? 0 : hours;
-            else
-                hours = hours == 12 ? 12 : hours + 12;
-
-            return $"{hours:D2}:{minutes}:{seconds}";
-        }
-
-        // ===== Q14 =====
-        static string RemoveLastVowel(string sentence)
-        {
-            string vowels = "aeiouAEIOU";
-            string[] words = sentence.Split(' ');
-            for (int i = 0; i < words.Length; i++)
-            {
-                for (int j = words[i].Length - 1; j >= 0; j--)
-                {
-                    if (vowels.Contains(words[i][j]))
-                    {
-                        words[i] = words[i].Remove(j, 1);
-                        break;
-                    }
-                }
-            }
-            return string.Join(" ", words);
         }
 
         // ===== Q15 =====
@@ -691,25 +548,6 @@ namespace CBasics
             return true;
         }
 
-        // ===== Q10 =====
-        static int WordCount(string sentence)
-        {
-            int count = 0;
-            bool inWord = false;
-            for (int i = 0; i < sentence.Length; i++)
-            {
-                if (sentence[i] != ' ' && !inWord)
-                {
-                    inWord = true;
-                    count++;
-                }
-                else if (sentence[i] == ' ')
-                {
-                    inWord = false;
-                }
-            }
-            return count;
-        }
     }
 
 
@@ -765,29 +603,6 @@ namespace CBasics
     }
 
     // ===== Q5 =====
-    internal class DateDiff
-    {
-        public void DisplayDifference(DateTime date1, DateTime date2)
-        {
-            int years = date2.Year - date1.Year;
-            int months = date2.Month - date1.Month;
-            int days = date2.Day - date1.Day;
-
-            if (days < 0)
-            {
-                months--;
-                days += DateTime.DaysInMonth(date2.Year, date2.Month == 1 ? 12 : date2.Month - 1);
-            }
-            if (months < 0)
-            {
-                years--;
-                months += 12;
-            }
-
-            Console.WriteLine($"Difference: {years} years, {months} months, {days} day.");
-        }
-    }
-
     // ===== Q6 =====
     internal class DateConverter
     {
