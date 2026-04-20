@@ -7,70 +7,82 @@ using System.Text.RegularExpressions;
 
 namespace CBasics
 {
-    internal class ProblemSolving_Tasks
+    internal class discordTasks
     {
         static void Main()
         {
-            // ======================================= File: Function_1_.pdf =======================================
-            // ======================================= Task 1 – Problem Solving =======================================
-            Console.WriteLine("======== Task 1: Problem Solving ========");
+            // ======================================= File: Function(1).pdf =======================================
+            // ========================== Task 1 – Problem Solving ==========================
+            Console.WriteLine("========================== Task 1: Problem Solving ==========================");
 
             // ===== Q1: Minutes to Seconds =====
             Console.WriteLine("\n======== Q1: Minutes to Seconds ========");
-            Console.WriteLine(MinutesToSeconds(5));   // 300
-            Console.WriteLine(MinutesToSeconds(3));   // 180
+            Console.WriteLine(MinutesToSeconds(5));
+            Console.WriteLine(MinutesToSeconds(3));
 
             // ===== Q2: Increment by 1 =====
             Console.WriteLine("\n======== Q2: Increment by 1 ========");
-            Console.WriteLine(Increment(5));    // 6
-            Console.WriteLine(Increment(0));    // 1
+            Console.WriteLine(Increment(5));
+            Console.WriteLine(Increment(0));
 
             // ===== Q3: First Element =====
             Console.WriteLine("\n======== Q3: First Element ========");
             int[] arr1 = { 10, 20, 30, 40 };
-            Console.WriteLine(FirstElement(arr1));  // 10
+            Console.WriteLine(FirstElement(arr1));
 
             // ===== Q4: Triangle Area =====
             Console.WriteLine("\n======== Q4: Triangle Area ========");
-            Console.WriteLine(TriangleArea(5, 10));  // 25
+            Console.WriteLine(TriangleArea(5, 10));
 
             // ===== Q5: Even Number in Even Index =====
             Console.WriteLine("\n======== Q5: Even Number in Even Index ========");
             int[] nums5 = { 5, 2, 2, 1, 8, 66, 55, 77, 34, 9, 55, 1 };
             int[] result5 = EvenNumberEvenIndex(nums5);
             foreach (int num in result5)
-                Console.Write(num + " ");  // 2 8 34
+                Console.Write(num + " ");
             Console.WriteLine();
 
             // ===== Q6: Even Index Odd Length =====
             Console.WriteLine("\n======== Q6: Even Index Odd Length ========");
-            string[] strings6 = { "alex", "mercer", "madrasa", "rashed2", "emad", "hala" };
+            string[] strings6 = { "alex", "mercer", "madrasa", "rashed2", "emad1", "hala" };
             string[] result6 = EvenIndexOddLength(strings6);
             foreach (string s in result6)
-                Console.Write(s + " ");  // madrasa
+                Console.Write(s + " ");
+            Console.WriteLine();
+
+            // ===== Q7: Power Element Index =====
+            Console.WriteLine("\n======== Q7: Power Element Index ========");
+            int[] nums7 = { 1, 2, 3, 4 };
+            int[] result7 = powerElementIndex(nums7);
+            foreach (int num in result7)
+                Console.Write(num + ", ");
             Console.WriteLine();
 
             // ===== Q8: Multiplication Using Sum =====
             Console.WriteLine("\n======== Q8: Multiplication Using Sum ========");
-            Console.WriteLine(Multiplication2(5, 4));   // 20
-            Console.WriteLine(Multiplication2(2, 8));   // 16
+            Console.WriteLine(Multiplication2(5, 4));
+            Console.WriteLine(Multiplication2(2, 8));
+
+            // ===== Q9: Multiplication Last saved =====
+            Console.WriteLine("\n======== Q9: Multiplication Last Saved ========");
+            Console.WriteLine(muti2(5, 4));
 
             // ===== Q10: Average of Array =====
             Console.WriteLine("\n======== Q10: Average of Array ========");
             int[] nums10a = { 1, 2, 3, 8, 9 };
             int[] nums10b = { 1, 2, 3, 8, 9, 77 };
-            Console.WriteLine(AveArray(nums10a));   // 4.6
-            Console.WriteLine(AveArray(nums10b));   // 16.6
+            Console.WriteLine(AveArray(nums10a));
+            Console.WriteLine(AveArray(nums10b));
 
 
             // ======================================= File: Function_2_.pdf =======================================
-            // ======================================= Task 2 – Problem Solving =======================================
-            Console.WriteLine("\n======== Task 2: Problem Solving ========");
+            // ========================== Task 2 – Problem Solving ==========================
+            Console.WriteLine("\n========================== Task 2: Problem Solving ==========================");
 
             // ===== Q1: Days Between Dates =====
             Console.WriteLine("\n======== Q1: Days Between Dates ========");
-            Console.WriteLine(GetDays(new DateTime(2019, 6, 14), new DateTime(2019, 6, 20)));   // 6
-            Console.WriteLine(GetDays(new DateTime(2018, 12, 29), new DateTime(2019, 1, 1)));   // 3
+            Console.WriteLine(GetDays(new DateTime(2019, 6, 14), new DateTime(2019, 6, 20)));
+            Console.WriteLine(GetDays(new DateTime(2018, 12, 29), new DateTime(2019, 1, 1)));
 
             // ===== Q2: Strings With Numbers =====
             Console.WriteLine("\n======== Q2: Strings With Numbers ========");
@@ -78,35 +90,43 @@ namespace CBasics
             string[] strArr2b = { "abc", "abc10" };
             string[] filteredNums2a = NumInStr(strArr2a);
             string[] filteredNums2b = NumInStr(strArr2b);
-            Console.WriteLine("[" + string.Join(", ", filteredNums2a) + "]");   // [1a, 2b]
-            Console.WriteLine("[" + string.Join(", ", filteredNums2b) + "]");   // [abc10]
+            Console.WriteLine("[" + string.Join(", ", filteredNums2a) + "]");
+            Console.WriteLine("[" + string.Join(", ", filteredNums2b) + "]");
 
             // ===== Q3: Reverse Odd Length Words =====
             Console.WriteLine("\n======== Q3: Reverse Odd Length Words ========");
-            Console.WriteLine(ReverseOdd("Bananas"));              // sananaB
-            Console.WriteLine(ReverseOdd("One two three four"));   // enO owt eerht four
+            Console.WriteLine(ReverseOdd("Apples"));
+            Console.WriteLine(ReverseOdd("Bananas"));
+            Console.WriteLine(ReverseOdd("One two three four"));
 
             // ===== Q4: Is Pandigital =====
             Console.WriteLine("\n======== Q4: Is Pandigital ========");
-            Console.WriteLine(IsPandigital(98140723568910));    // True
-            Console.WriteLine(IsPandigital(90864523148909));    // False
-            Console.WriteLine(IsPandigital(112233445566778899));// False
+            Console.WriteLine(IsPandigital(98140723568910));
+            Console.WriteLine(IsPandigital(90864523148909));
+            Console.WriteLine(IsPandigital(112233445566778899));
 
 
             // ======================================= File: Function_3_.pdf =======================================
-            // ======================================= Task 3 – Problem Solving =======================================
-            Console.WriteLine("\n======== Task 3: Problem Solving ========");
+            // ========================== Task 3 – Problem Solving =========================
+            Console.WriteLine("\n======================== Task 3: Problem Solving ========================");
 
-            // ===== Q1: Add(n)(m) =====
-            Console.WriteLine("\n======== Q1: Add(n)(m) ========");
-            Console.WriteLine(Add(10)(20));     // 30
-            Console.WriteLine(Add(0)(20));      // 20
-            Console.WriteLine(Add(-30)(80));    // 50
+            // ===== Q1: Add(n,m) =====
+            Console.WriteLine("\n======== Q1: Add(n,m) ========");
+            Console.WriteLine(Add(10, 20));
+            Console.WriteLine(Add(0, 20));
+            Console.WriteLine(Add(-30, 80));
+
+            // ===== Q2: Remove Leading and Trailing Zeros =====
+            Console.WriteLine("\n======== Q2: Remove Leading and Trailing Zeros ========");
+            Console.WriteLine(removeLeadingTrailing("000123.45000"));
+
 
             // ===== Q3: Second Largest =====
             Console.WriteLine("\n======== Q3: Second Largest ========");
-            Console.WriteLine(SecondLargest(new int[] { 10, 40, 30, 20, 50 }));      // 40
-            Console.WriteLine(SecondLargest(new int[] { 25, 143, 89, 13, 105 }));    // 105
+            int[] arr_1 = { 10, 40, 30, 20, 50 };
+            int[] arr_2 = { 25, 143, 89, 13, 105 };
+            Console.WriteLine(SecondLargest(arr_1));
+            Console.WriteLine(SecondLargest(arr_2));
 
             // ===== Q4: Is Repdigit =====
             Console.WriteLine("\n======== Q4: Is Repdigit ========");
@@ -116,9 +136,9 @@ namespace CBasics
 
             // ===== Q5: Reverse Words =====
             Console.WriteLine("\n======== Q5: Reverse Words ========");
-            Console.WriteLine(ReverseWords("  the sky is blue"));   // blue is sky the
-            Console.WriteLine(ReverseWords("hello world!  "));      // world! hello
-            Console.WriteLine(ReverseWords("a good   example"));    // example good a
+            Console.WriteLine(ReverseWords("  the sky is blue"));
+            Console.WriteLine(ReverseWords("hello world!  "));
+            Console.WriteLine(ReverseWords("a good   example"));
 
             // ===== Q6: Seven Boom =====
             Console.WriteLine("\n======== Q6: Seven Boom ========");
@@ -137,27 +157,50 @@ namespace CBasics
             Console.WriteLine(CountTrue(new bool[] { false, false, false, false }));        // 0
             Console.WriteLine(CountTrue(new bool[] { }));                                   // 0
 
+            // ===== Q9: Cap to Front =====
+            Console.WriteLine("\n======== Q9: Cap to Front ========");
+            Console.WriteLine(CapToFront("hApPy"));
+            Console.WriteLine(CapToFront("moveMENT"));
+            Console.WriteLine(CapToFront("shOrtCAKE"));
+
+            // ===== Q10: Match Last Item =====
+            Console.WriteLine("\n======== Q10: Match Last Item ========");
+            Console.WriteLine(MatchLastItem(new object[] { "rsq", "6hi", "g", "rsq6hig" }));
+            Console.WriteLine(MatchLastItem(new object[] { 1, 1, 1, "11" }));
+            Console.WriteLine(MatchLastItem(new object[] { 8, "thunder", true, "8thundertrue" }));
+
             // ===== Q11: Find NaN =====
             Console.WriteLine("\n======== Q11: Find NaN ========");
-            Console.WriteLine(FindNaN(new double[] { 1, 2, double.NaN }));              // 2
-            Console.WriteLine(FindNaN(new double[] { double.NaN, 1, 2, 3, 4 }));       // 0
-            Console.WriteLine(FindNaN(new double[] { 0, 1, 2, 3, 4 }));                // -1
+            Console.WriteLine(FindNaN(new double[] { 1, 2, double.NaN }));
+            Console.WriteLine(FindNaN(new double[] { double.NaN, 1, 2, 3, 4 }));
+            Console.WriteLine(FindNaN(new double[] { 0, 1, 2, 3, 4 }));
 
             // ===== Q12: Remove Duplicates =====
             Console.WriteLine("\n======== Q12: Remove Duplicates ========");
-            int[] noDup1 = RemoveDups(new int[] { 1, 0, 1, 0 });
-            Console.WriteLine("[" + string.Join(", ", noDup1) + "]");    // [1, 0]
+            Console.WriteLine("[" + string.Join(", ", RemoveDups(new object[] { 1, 0, 1, 0 })) + "]");
+            Console.WriteLine("[" + string.Join(", ", RemoveDups(new object[] { "John", "Taylor", "John" })) + "]");
+
+            // ===== Q13: Convert Time =====
+            Console.WriteLine("\n======== Q13: Convert Time ========");
+            Console.WriteLine(ConvertTime("07:05:45PM"));
+            Console.WriteLine(ConvertTime("12:00:00AM"));
+            Console.WriteLine(ConvertTime("12:45:54PM"));
+
+            // ===== Q14: Remove Last Vowel =====
+            Console.WriteLine("\n======== Q14: Remove Last Vowel ========");
+            Console.WriteLine(removeLastVowel("Those who dare to fail miserably can achieve greatly."));
+            Console.WriteLine(removeLastVowel("Love is a serious mental disease."));
 
             // ===== Q15: Sum of Cubes =====
             Console.WriteLine("\n======== Q15: Sum of Cubes ========");
-            Console.WriteLine(SumOfCubes(new int[] { 1, 5, 9 }));    // 855
-            Console.WriteLine(SumOfCubes(new int[] { 3, 4, 5 }));    // 216
-            Console.WriteLine(SumOfCubes(new int[] { }));             // 0
+            Console.WriteLine("The sum of cubes is: " + SumOfCubes(new int[] { 1, 5, 9 }));
+            Console.WriteLine("The sum of cubes is: " + SumOfCubes(new int[] { 3, 4, 5 }));
+            Console.WriteLine("The sum of cubes is: " + SumOfCubes(new int[] { }));
 
 
             // ======================================= File: Task_4__C_.docx =======================================
             // ======================================= Task 4 – Methods =======================================
-            Console.WriteLine("\n======== Task 4: Methods ========");
+            Console.WriteLine("\n======================== Task 4: Methods ========================");
 
             // ===== Q1: Sum and Average of 10 Numbers =====
             Console.WriteLine("\n======== Q1: Sum & Average ========");
@@ -205,7 +248,7 @@ namespace CBasics
 
             // ======================================= File: Task_5__C_.docx =======================================
             // ======================================= Task 5 – OOP =======================================
-            Console.WriteLine("\n======== Task 5: OOP ========");
+            Console.WriteLine("\n======================== Task 5: OOP ========================");
 
             // ===== Q1: MyClass Initialized =====
             Console.WriteLine("\n======== Q1: MyClass ========");
@@ -286,12 +329,30 @@ namespace CBasics
             return result.ToArray();
         }
 
+        // ===== Q7 =====
+        static int[] powerElementIndex(int[] arr_num)
+        {
+            int[] result = new int[arr_num.Length];
+            for (int i = 0; i < arr_num.Length; i++)
+                result[i] = (int)Math.Pow(arr_num[i], i);
+            return result;
+        }
+
         // ===== Q8 =====
         static int Multiplication2(int a, int b)
         {
             int result = 0;
             for (int i = 0; i < b; i++)
                 result += a;
+            return result;
+        }
+
+        // ===== Q9 =====
+        static int muti2(int a, int b) // a is the start , and b is the end
+        {
+            int result = 1;
+            for (int i = 0; i < b; i++)
+                result *= a;
             return result;
         }
 
@@ -318,19 +379,23 @@ namespace CBasics
         static string[] NumInStr(string[] arr)
         {
             List<string> result = new List<string>();
-            foreach (string s in arr)
+            for (int i = 0; i < arr.Length; i++)
             {
-                foreach (char c in s)
+                string currentString = arr[i];
+                for (int j = 0; j < currentString.Length; j++)
                 {
-                    if (char.IsDigit(c))
+                    if (char.IsDigit(currentString[j]))
                     {
-                        result.Add(s);
+                        result.Add(currentString);
                         break;
                     }
                 }
             }
             return result.ToArray();
+            // or
+            //return arr.Where(s => Regex.IsMatch(s, @"\d")).ToArray();
         }
+
 
         // ===== Q3 =====
         static string ReverseOdd(string sentence)
@@ -340,9 +405,8 @@ namespace CBasics
             {
                 if (words[i].Length % 2 != 0)
                 {
-                    char[] chars = words[i].ToCharArray();
-                    System.Array.Reverse(chars);
-                    words[i] = new string(chars);
+                    string reversed = new string(words[i].Reverse().ToArray());
+                    words[i] = reversed;
                 }
             }
             return string.Join(" ", words);
@@ -351,13 +415,11 @@ namespace CBasics
         // ===== Q4 =====
         static bool IsPandigital(long number)
         {
-            string s = number.ToString();
-            for (char c = '0'; c <= '9'; c++)
-            {
-                if (!s.Contains(c))
-                    return false;
-            }
-            return true;
+            return number.ToString().Where(char.IsDigit).Distinct().Count() == 10;
+            // ToString () to convert number to string
+            // Where(char.IsDigit) to filter only digits
+            // Distinct() to get unique digits ; Delete the duplicates 
+            // Count() to count them. If the count is 10, it means all digits from 0 to 9 are present.
         }
 
 
@@ -365,16 +427,23 @@ namespace CBasics
         // ======================================= Task 3 – Methods =======================================
 
         // ===== Q1 =====
-        static Func<int, int> Add(int n)
+        static int Add(int n1, int n2)
         {
-            return m => n + m;
+            int result = n1 + n2;
+            return result;
+        }
+
+        // ===== Q2 =====
+        static string removeLeadingTrailing(string s)
+        {
+            return s.Trim('0');
         }
 
         // ===== Q3 =====
         static int SecondLargest(int[] arr)
         {
-            int largest = arr.Max();
-            return arr.Where(n => n < largest).Max();
+            int max = arr.Max();
+            return arr.Where(n => n < max).Max();
         }
 
         // ===== Q4 =====
@@ -385,16 +454,23 @@ namespace CBasics
             char first = s[0];
             foreach (char c in s)
             {
-                if (c != first) return false;
+                if (c != first)
+                    return false;
             }
             return true;
+            // or 
+            //return n.ToString().Distinct().Count() == 1;
         }
 
         // ===== Q5 =====
         static string ReverseWords(string sentence)
         {
-            string[] words = sentence.Trim().Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
-            System.Array.Reverse(words);
+            string[] words = sentence.Split(' ');
+            for (int i = 0; i < words.Length; i++)
+            {
+                string reversed = new string(words[i].Reverse().ToArray());
+                words[i] = reversed;
+            }
             return string.Join(" ", words);
         }
 
@@ -403,8 +479,9 @@ namespace CBasics
         {
             foreach (int num in arr)
             {
-                if (num.ToString().Contains('7'))
-                    return "Boom!";
+                string seven = num.ToString();
+                if (seven.Contains('7'))
+                    return seven + ": Boom!";
             }
             return "there is no 7 in the array";
         }
@@ -429,9 +506,29 @@ namespace CBasics
             int count = 0;
             foreach (bool b in arr)
             {
-                if (b) count++;
+                if (b == true)
+                    count++;
             }
             return count;
+        }
+
+        // ===== Q9 =====
+        static string CapToFront(string s)
+        {
+            string lower = new string(s.Where(char.IsLower).ToArray());
+            string upper = new string(s.Where(char.IsUpper).ToArray());
+            return upper + lower;
+        }
+
+        // ===== Q10 =====
+        static bool MatchLastItem(Object[] arr)
+        {
+            string joined = "";
+            for (int i = 0; i < arr.Length - 1; i++)
+                joined += arr[i].ToString();
+            if (joined == arr[arr.Length - 1].ToString())
+                return true;
+            return false;
         }
 
         // ===== Q11 =====
@@ -439,21 +536,55 @@ namespace CBasics
         {
             for (int i = 0; i < arr.Length; i++)
             {
-                if (double.IsNaN(arr[i])) return i;
+                if (double.IsNaN(arr[i]))
+                    return i;
             }
             return -1;
         }
 
         // ===== Q12 =====
-        static int[] RemoveDups(int[] arr)
+        static object[] RemoveDups(object[] arr)
         {
-            List<int> result = new List<int>();
-            foreach (int num in arr)
+            return arr.Distinct().ToArray();
+        }
+
+        // ===== Q13 =====
+        static string ConvertTime(string time)
+        {
+            string amPm = time.Substring(time.Length - 2);
+            int hour = int.Parse(time.Substring(0, 2));
+            string minSec = time.Substring(2, 6);
+            if (amPm == "AM")
             {
-                if (!result.Contains(num))
-                    result.Add(num);
+                if (hour == 12) hour = 0;
             }
-            return result.ToArray();
+            else
+            {
+                if (hour != 12) hour += 12;
+            }
+            return hour.ToString() + minSec;
+        }
+
+        // ===== Q14 =====
+        static string removeLastVowel(string sentence)
+        {
+            string[] words = sentence.Split(' ');
+            string vowels = "aeiouAEIOU";
+
+            for (int i = words.Length - 1; i >= 0; i--)
+            {
+                string currentWord = words[i];
+                for (int j = currentWord.Length - 1; j >= 0; j--)
+                {
+                    if (vowels.Contains(currentWord[j]))
+                    {
+                        words[i] = currentWord.Remove(j, 1);
+                        break;
+                    }
+                }
+            }
+
+            return string.Join(" ", words);
         }
 
         // ===== Q15 =====
@@ -500,12 +631,6 @@ namespace CBasics
         }
 
         // ===== Q5 =====
-        static int Animals(int chickens, int cows, int pigs)
-        {
-            if (chickens % 2 != 0 || cows % 2 != 0 || pigs % 2 != 0)
-                throw new ArgumentException("Function doesn't accept odd numbers.");
-            return (chickens * 2) + (cows * 4) + (pigs * 4);
-        }
 
         // ===== Q6 =====
         static string Login(string username, string password)
@@ -530,12 +655,6 @@ namespace CBasics
         }
 
         // ===== Q8 =====
-        static bool IsLeapYear(int year)
-        {
-            if (year < 1900 || year > 2024)
-                throw new ArgumentOutOfRangeException("Year must be between 1900 and 2024.");
-            return (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
-        }
 
         // ===== Q9 =====
         static bool IsPrime(int n)
@@ -552,65 +671,6 @@ namespace CBasics
 
 
     // ======================================= File: Task_5__C_.docx =======================================
-    // ======================================= Task 5 – OOP Classes =======================================
+    // ============================ Task 5 – OOP Classes =============================
 
-    // ===== Q1 =====
-    internal class MyClass
-    {
-        public MyClass()
-        {
-            Console.WriteLine("MyClass class has initialized!");
-        }
-
-        public void Display()
-        {
-            Console.WriteLine("MyClass class has initialized!");
-        }
-    }
-
-    // ===== Q2 =====
-    internal class Greeter
-    {
-        public void Greet(string name)
-        {
-            Console.WriteLine($"Hello All, I am {name}");
-        }
-    }
-
-    // ===== Q3 =====
-    internal class FactorialCalc
-    {
-        public long Calculate(int n)
-        {
-            if (n < 0) throw new ArgumentException("Factorial is not defined for negative numbers.");
-            long result = 1;
-            for (int i = 2; i <= n; i++)
-                result *= i;
-            return result;
-        }
-    }
-
-    // ===== Q4 =====
-    internal class ArraySorter
-    {
-        public void SortAndDisplay(int[] array)
-        {
-            Array.Sort(array);
-            Console.Write("Sorted array: { ");
-            Console.Write(string.Join(", ", array));
-            Console.WriteLine(" }");
-        }
-    }
-
-    // ===== Q5 =====
-    // ===== Q6 =====
-    internal class DateConverter
-    {
-        public void Convert(string dateString)
-        {
-            // '-' means d-M-yyyy format in C#
-            DateTime date = DateTime.ParseExact(dateString, "d-MM-yyyy", CultureInfo.InvariantCulture);
-            Console.WriteLine($"Converted Date: {date:yyyy-MM-dd}");
-        }
-    }
 }
