@@ -237,9 +237,7 @@ namespace CBasics
 
             // ===== Q8: Leap Year =====
             Console.WriteLine("\n======== Q8: Leap Year ========");
-            Console.WriteLine(IsLeapYear(2000));  // True
-            Console.WriteLine(IsLeapYear(1900));  // False
-            Console.WriteLine(IsLeapYear(2024));  // True
+            
 
             // ===== Q9: Is Prime =====
             Console.WriteLine("\n======== Q9: Is Prime ========");
@@ -248,33 +246,7 @@ namespace CBasics
 
             // ======================================= File: Task_5__C_.docx =======================================
             // ======================================= Task 5 – OOP =======================================
-            Console.WriteLine("\n======================== Task 5: OOP ========================");
-
-            // ===== Q1: MyClass Initialized =====
-            Console.WriteLine("\n======== Q1: MyClass ========");
-            MyClass myClass = new MyClass();
-            myClass.Display();
-
-            // ===== Q2: Greeting Class =====
-            Console.WriteLine("\n======== Q2: Greeting Class ========");
-            Greeter greeter = new Greeter();
-            greeter.Greet("Scott");
-
-            // ===== Q3: Factorial Class =====
-            Console.WriteLine("\n======== Q3: Factorial Class ========");
-            FactorialCalc factCalc = new FactorialCalc();
-            Console.WriteLine($"Factorial of 5: {factCalc.Calculate(5)}");  // 120
-
-            // ===== Q4: Array Sort Class =====
-            Console.WriteLine("\n======== Q4: Array Sort Class ========");
-            ArraySorter sorter = new ArraySorter();
-            int[] arrayToSort = { 11, -2, 4, 35, 0, 8, -9 };
-            sorter.SortAndDisplay(arrayToSort);
-
-            // ===== Q6: String to Date Class =====
-            Console.WriteLine("\n======== Q6: String to Date Class ========");
-            DateConverter dateConverter = new DateConverter();
-            dateConverter.Convert("12-08-2004");
+            
         }
 
 
@@ -631,6 +603,12 @@ namespace CBasics
         }
 
         // ===== Q5 =====
+        static int Animals(int chickens, int cows, int pigs)
+        {
+            if (chickens % 2 != 0 || cows % 2 != 0 || pigs % 2 != 0)
+                throw new ArgumentException("Function doesn't accept odd numbers.");
+            return (chickens * 2) + (cows * 4) + (pigs * 4);
+        }
 
         // ===== Q6 =====
         static string Login(string username, string password)
