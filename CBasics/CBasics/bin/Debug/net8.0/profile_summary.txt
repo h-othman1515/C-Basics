@@ -1,0 +1,16 @@
+Name: Hanan Othman
+Specialization: Computer Science / Web Development
+Age: 23
+
+Description:
+I am a dedicated Computer Science student and web development intern currently 
+honing my skills at Orange Digital Village. My professional life is centered 
+around building functional, high-impact digital experiences, ranging from 
+full-stack ASP.NET MVC applications to mobile development with Flutter. 
+
+In my work, I bridge the gap between technical logic and artistic design. I 
+frequently integrate my interests in photography and cosmic aesthetics into 
+my UI/UX projects, such as my personal portfolio "Deep Nebula." Whether 
+developing interactive JavaScript quizzes or managing complex user directories 
+with local storage, I focus on creating tools that are as visually engaging 
+as they are technically sound.

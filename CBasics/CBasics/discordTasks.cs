@@ -220,33 +220,59 @@ namespace CBasics
 
             // ===== Q4: Age in Days =====
             Console.WriteLine("\n======== Q4: Age in Days ========");
-            Console.WriteLine(AgeToDays(25));   // 9125
+            Console.WriteLine(AgeToDays(25));  
 
             // ===== Q5: Animal Legs =====
             Console.WriteLine("\n======== Q5: Animal Legs ========");
-            Console.WriteLine(Animals(2, 3, 5));  // 36
+            Console.WriteLine(Animals(2, 3, 5)); 
 
             // ===== Q6: Login =====
             Console.WriteLine("\n======== Q6: Login ========");
-            Console.WriteLine(Login("Heba", "1234"));    // pass
-            Console.WriteLine(Login("Heba", "wrong"));   // failed
+            Console.WriteLine(Login("Heba", "1234"));   
+            Console.WriteLine(Login("Heba", "wrong"));   
 
             // ===== Q7: Power =====
             Console.WriteLine("\n======== Q7: Power ========");
-            Console.WriteLine(Power(2, 10));  // 1024
+            Console.WriteLine(Power(2, 10)); 
 
             // ===== Q8: Leap Year =====
             Console.WriteLine("\n======== Q8: Leap Year ========");
-            
+            CheckLeapYear(2020);  
+            CheckLeapYear(1900);  
+            CheckLeapYear(2000);  
 
             // ===== Q9: Is Prime =====
             Console.WriteLine("\n======== Q9: Is Prime ========");
-            Console.WriteLine(IsPrime(7));    // True
-            Console.WriteLine(IsPrime(10));   // False
+            Console.WriteLine(IsPrime(7));   
+            Console.WriteLine(IsPrime(10));   
 
             // ======================================= File: Task_5__C_.docx =======================================
             // ======================================= Task 5 – OOP =======================================
-            
+            Console.WriteLine("\n======================== Task 5: OOP Classes ========================");
+            Console.WriteLine("======== Task 1 ========");
+            testClass myTest = new testClass();
+
+            Console.WriteLine("\n======== Task 2 ========");
+            User user1 = new User { Name = "Hanan" };
+            user1.PrintName();
+
+            Console.WriteLine("\n======== Task 3 ========");
+            factorial fact = new factorial();
+            Console.WriteLine(fact.calculateFact(5));
+
+            Console.WriteLine("\n======== Task 4 ========");
+            sorted sorted = new sorted();
+            int[] unsorted = { 11, -2, 4, 35, 0, 8, -9 };
+            sorted.SortedNumbers(unsorted);
+            Console.WriteLine("Sorted Array: " + string.Join(", ", unsorted));
+
+            Console.WriteLine("\n======== Task 5 ========");
+            Days days = new Days();
+            Console.WriteLine(days.GetDays(new DateTime(1978, 11, 3), new DateTime(2003, 4, 29)));
+
+            Console.WriteLine("\n======== Task 6 ========");
+            DateConverter newDate = new DateConverter();
+            Console.WriteLine(newDate.fromStringToDate("29-04-2003"));
         }
 
 
@@ -605,8 +631,6 @@ namespace CBasics
         // ===== Q5 =====
         static int Animals(int chickens, int cows, int pigs)
         {
-            if (chickens % 2 != 0 || cows % 2 != 0 || pigs % 2 != 0)
-                throw new ArgumentException("Function doesn't accept odd numbers.");
             return (chickens * 2) + (cows * 4) + (pigs * 4);
         }
 
@@ -633,9 +657,26 @@ namespace CBasics
         }
 
         // ===== Q8 =====
+        public static void CheckLeapYear(int year)
+        {
+            if (year < 1900 || year > 2024)
+            {
+                Console.WriteLine("Please enter a year between 1900 and 2024.");
+                return;
+            }
 
-        // ===== Q9 =====
-        static bool IsPrime(int n)
+            if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0))
+            {
+                Console.WriteLine($"{year} is a leap year.");
+            }
+            else
+            {
+                Console.WriteLine($"{year} is not a leap year.");
+            }
+        }
+
+            // ===== Q9 =====
+            static bool IsPrime(int n)
         {
             if (n < 2) return false;
             for (int i = 2; i <= Math.Sqrt(n); i++)
@@ -650,5 +691,70 @@ namespace CBasics
 
     // ======================================= File: Task_5__C_.docx =======================================
     // ============================ Task 5 – OOP Classes =============================
+    // ===== Q1 =====
+    public class testClass
+    {
+        public testClass()
+        {
+            Console.WriteLine("'MyClass class has initialized!'");
+        }
+    }
 
+    // ===== Q2 =====
+    public class User
+    {
+        public string Name { get; set; }
+        public void PrintName()
+        {
+            Console.WriteLine($"Hello My name is: {Name}");
+        }
+    }
+
+    // ===== Q3 =====
+    public class factorial
+    {
+        public int calculateFact(int a) // 5 
+        {
+            if (a <= 1) return 1; // Base case: factorial of 0 or 1 is 1
+            return a * calculateFact(a - 1); // 5 * calculateFact(4) => 5 * (4 * calculateFact(3)) => 5 * (4 * (3 * calculateFact(2))) => 5 * (4 * (3 * (2 * calculateFact(1)))) => 5 * (4 * (3 * (2 * 1))) => 120
+        }
+    }
+
+    // ===== Q4 =====
+    public class sorted
+    {
+        public int[] SortedNumbers(int[] numbers)
+        {
+            Array.Sort(numbers);
+            return numbers;
+        }
+    }
+
+    // ===== Q5 =====
+    public class Days
+    {
+        public int years { get; set; }
+        public int months { get; set; }
+        public int days { get; set; }
+
+        public string GetDays(DateTime date1, DateTime date2)
+        {
+            days = (int)(date2 - date1).TotalDays;
+            years = days / 365;
+            months = (days % 365) / 30;
+            days = (days % 365) % 30;
+            return $"Difference: {years} years, {months} months, and {days} days.";
+        }
+    }
+
+    // ===== Q6 =====
+    public class DateConverter
+    {
+        public string fromStringToDate(string Date)
+        {
+            DateTime convertedDate = DateTime.ParseExact(Date, "d-MM-yyyy", null);
+
+            return "Converted Date: " + convertedDate.ToString("yyyy-MM-dd");
+        }
+    }
 }

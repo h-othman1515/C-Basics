@@ -367,6 +367,398 @@ namespace CBasics
             // ======================================= Section 7: Advanced Logic Tasks (List & Array) =======================================
             Console.WriteLine("\n======== Section 7: Advanced Logic Tasks (List & Array) ========");
 
+            // Task 1: Hidden Pattern Finder
+            Console.WriteLine("======== Task 1: Hidden Pattern Finder ========");
+            int[] arr1_1 = { 1, 3, 7, 3, 2, 3, 1 };
+            int counter = 0;
+            int maxFrequency = arr1_1[0];
+
+            Dictionary<int, int> frequency = new Dictionary<int, int>();
+
+            for (int i = 0; i < arr1_1.Length; i++)
+            {
+                int number = arr1_1[i];
+                if (frequency.ContainsKey(number))
+                {
+                    frequency[number]++;
+                }
+                else
+                {
+                    frequency.Add(number, 1);
+                }
+
+                if (frequency[number] > counter)
+                {
+                    counter = frequency[number];
+                    maxFrequency = number;
+                }
+            }
+
+            Console.WriteLine("Most Frequent Number: " + maxFrequency + " (appears " + counter + " times)");
+
+            // Task 2: Rotation Puzzle
+            Console.WriteLine("\n======== Task 2: Rotation Puzzle ========");
+            int swap = 29;
+            int[] arr2_1 = { 1, 2, 3, 4, 5 };
+
+            Console.WriteLine("Array Before rotation:");
+            foreach (var num in arr2_1)
+            {
+                Console.Write(num + " ,");
+            }
+
+            swap = swap % arr2_1.Length;
+
+            // Reverse all the array
+            int left = 0;
+            int right = arr2_1.Length - 1;
+
+            while (left < right)
+            {
+                int temp = arr2_1[left];
+                arr2_1[left] = arr2_1[right];
+                arr2_1[right] = temp;
+
+                left++;
+                right--;
+            }
+
+            // Reverse the first swap elements
+            left = 0;
+            right = swap - 1;
+
+            while (left < right)
+            {
+                int temp = arr2_1[left];
+                arr2_1[left] = arr2_1[right];
+                arr2_1[right] = temp;
+
+                left++;
+                right--;
+            }
+
+            // Reverse the rest of the array
+            left = swap;
+            right = arr2_1.Length - 1;
+
+            while (left < right)
+            {
+                int temp = arr2_1[left];
+                arr2_1[left] = arr2_1[right];
+                arr2_1[right] = temp;
+
+                left++;
+                right--;
+            }
+
+            Console.WriteLine("\nArray after rotation with swap = " + swap + ":");
+            foreach (var num in arr2_1)
+            {
+                Console.Write(num + " ,");
+            }
+
+            // Task 3: Mirror Check
+            Console.WriteLine("\n\n======== Task 3: Mirror Check ========");
+            int[] arr3_1 = { 1, 2, 3, 2, 1 };
+            int[] arr3_2 = { 1, 2, 3, 4 };
+
+            bool isPalindrome = true;
+
+            //array 1
+            left = 0;
+            right = arr3_1.Length - 1;
+            while (left < right)
+            {
+                if (arr3_1[left] != arr3_1[right])
+                {
+                    isPalindrome = false;
+                    break;
+                }
+                left++;
+                right--;
+            }
+
+            Console.WriteLine("Is The first array a mirror? " + isPalindrome);
+
+            // array 2
+            left = 0;
+            right = arr3_2.Length - 1;
+            while (left < right)
+            {
+                if (arr3_2[left] != arr3_2[right])
+                {
+                    isPalindrome = false;
+                    break;
+                }
+                left++;
+                right--;
+            }
+
+            Console.WriteLine("Is The Second array a mirror? " + isPalindrome);
+
+            // Task 4: Missing Number Detective
+            Console.WriteLine("\n\n======== Task 4: Missing Number Detective ========");
+            int N = 5;
+            int[] arr4_1 = { 1, 2, 3, 5 }; // 1+2+3+4+5 = 15, 1+2+3+5 = 11, missing number = 15 - 11 = 4
+
+            int expectedSum = N * (N + 1) / 2;
+            int actualSum = 0;
+
+            for (int i = 0; i < arr4_1.Length; i++)
+            {
+                actualSum += arr4_1[i];
+            }
+
+            foreach (var num in arr4_1)
+            {
+                Console.Write(num + " ,");
+            }
+
+            int missingNumber = expectedSum - actualSum;
+            Console.WriteLine("\nMissing Number: " + missingNumber);
+
+            // Task 5: Split List into Balanced Parts
+            Console.WriteLine("\n\n======== Task 5: Split List into Balanced Parts ========");
+            List<int> nums = new List<int> { 10, 20, 30, 5, 25 };
+
+            double leftSum = 0;
+            double rightSum = 0;
+            double totalSum = nums.Sum();
+            double bestDiff = double.MaxValue;
+            double different = 0;
+            int splitIndex = 0;
+
+            for (int i = 0; i < nums.Count - 1; i++)
+            {
+                leftSum += nums[i];
+                rightSum = totalSum - leftSum;
+                different = Math.Abs(leftSum - rightSum);
+
+                if (different < bestDiff)
+                {
+                    bestDiff = different;
+                    splitIndex = i + 1;
+                }
+            }
+            // Output the results
+            var leftPart = nums[..splitIndex]; // From start to splitIndex (take)
+            var rightPart = nums[splitIndex..]; // From splitIndex to the end (skip)
+
+            Console.WriteLine($"Best Split: [{string.Join(", ", leftPart)}] | [{string.Join(", ", rightPart)}]");
+            Console.WriteLine($"Minimal Difference: {bestDiff}");
+
+            // ============= Task 6: Longest Increasing Sequence =============
+            Console.WriteLine("\n======== Task 6: Longest Increasing Sequence ========");
+            int[] arr6 = { 1, 2, 2, 3, 4, 1, 2, 3 };
+
+            List<int> current6 = new List<int>();
+            List<int> best6 = new List<int>();
+
+            foreach (int n in arr6)
+            {
+                if (current6.Count == 0 || n > current6.Last())
+                {
+                    current6.Add(n);
+                }
+                else
+                {
+                    if (current6.Count > best6.Count) best6 = new List<int>(current6);
+                    current6 = new List<int> { n };
+                }
+            }
+
+            if (current6.Count > best6.Count) best6 = current6;
+
+            Console.WriteLine("Longest Increasing Sequence: " + string.Join(", ", best6));
+
+
+            // ============= Task 7: Duplicate Distance =============
+            Console.WriteLine("\n======== Task 7: Duplicate Distance ========");
+            int[] arr7 = { 1, 2, 3, 1, 4, 2, 1 }; // len = 7
+            int minDistance = int.MaxValue;
+
+            for (int i = 0; i < arr7.Length; i++) // i = 0
+            {
+                for (int j = i + 1; j < arr7.Length; j++) // j = 1 , 2 , 3 , 4 , 5 , 6
+                {
+                    if (arr7[i] == arr7[j])
+                    // begin 1 == 2 (false) , i = 0, j = 1 // ||==> 1 == 3 (false) , i = 0, j = 2 
+                    // ||==> 1 == 1 (true) , i = 0, j= 3
+                    // ||==> 1 == 4 (false) , i = 0, j = 4 // ||==> 1 == 2 (false) , i = 0, j = 5  
+                    // ||==> 1 == 1 (true) , i = 0, j = 6
+                    {
+                        int distance = j - i;  // distance = 3 - 0 = 3 // ||==> distance = 6 - 0 = 6
+                        if (distance < minDistance) // distance = 3 < minDistance = int.MaxValue (true) // ||==> distance = 6 < minDistance = 3 (false)
+                            minDistance = distance; // minDistance = 3 // donesn't change
+                    }
+                }
+            }
+
+            Console.WriteLine("Shortest Distance Between Duplicates: " + minDistance);
+
+
+            // ============= Task 8: Reorder by Rule (Evens First, Then Odds) =============
+            Console.WriteLine("\n======== Task 8: Reorder by Rule ========");
+            int[] arr8 = { 1, 2, 3, 4, 5, 6, 7, 8 };
+
+            List<int> evens = new List<int>();
+            List<int> odds = new List<int>();
+
+            foreach (int n in arr8)
+            {
+                if (n % 2 == 0) evens.Add(n);
+                else odds.Add(n);
+            }
+
+            List<int> reordered = new List<int>(evens);
+            foreach (var n in odds)
+            {
+                reordered.Add(n);
+            }
+
+            Console.WriteLine("Reordered: " + string.Join(", ", reordered));
+
+
+            // ============= Task 9: Peaks Finder =============
+            Console.WriteLine("\n======== Task 9: Peaks Finder ========");
+            int[] arr9 = { 1, 3, 2, 4, 1 };
+            List<int> peaks = new List<int>();
+
+            for (int i = 1; i < arr9.Length - 1; i++)
+            {
+                if (arr9[i] > arr9[i - 1] && arr9[i] > arr9[i + 1])
+                {
+                    peaks.Add(arr9[i]);
+                }
+            }
+
+            Console.WriteLine("Peaks: " + string.Join(", ", peaks));
+
+
+            // ============= Task 10: Two Sum =============
+            Console.WriteLine("\n======== Task 10: Two Sum ========");
+            int[] arr10 = { 2, 7, 11, 15 };
+            int target10 = 9;
+
+            Dictionary<int, int> seen = new Dictionary<int, int>();
+
+            foreach (int n in arr10) // n = 2 // ||==> n = 7 // ||==> n = 11 // ||==> n = 15
+            {
+                int result = target10 - n; // result = 9 - 2 = 7 // ||==> result = 9 - 7 = 2 // ||==> result = 9 - 11 = -2 // ||==> result = 9 - 15 = -6
+                if (seen.ContainsKey(result)) // does seen contain 7 (false) // ||==> does seen contain 2 (true) // ||==> does seen contain -2 (false) // ||==> does seen contain -6 (false)
+                {
+                    Console.WriteLine($"Pair Found: {result} + {n} = {target10}"); // Pair Found: 2 + 7 = 9
+                    break;
+                }
+                seen[n] = n; // seen[2] = 2 // ||==> seen[7] = 7 // ||==> seen[11] = 11 // ||==> seen[15] = 15
+            }
+
+
+            // ============= Task 11: Shift Zeros =============
+            // same as evens and odds but with zeros and non-zeros
+            Console.WriteLine("\n======== Task 11: Shift Zeros ========");
+            int[] arr11 = { 0, 1, 0, 3, 12 };
+
+            List<int> nonZeros = new List<int>();
+            int zeroCount = 0;
+
+            // removing the zeros and counting them
+            foreach (int n in arr11)
+            {
+                if (n != 0) nonZeros.Add(n);
+                else zeroCount++;
+            }
+
+            // then adding the zeros at the end of the non-zeros list
+            for (int i = 0; i < zeroCount; i++)
+                nonZeros.Add(0);
+
+            Console.WriteLine("Shifted Zeros: " + string.Join(", ", nonZeros));
+
+
+            // ============= Task 12: Alternating Merge =============
+            Console.WriteLine("\n======== Task 12: Alternating Merge ========");
+            int[] arr12a = { 1, 2, 3 };
+            int[] arr12b = { 4, 5, 6 };
+
+            List<int> merged = new List<int>();
+            int maxLen = Math.Max(arr12a.Length, arr12b.Length);
+
+            for (int i = 0; i < maxLen; i++)
+            {
+                if (i < arr12a.Length) merged.Add(arr12a[i]);
+                if (i < arr12b.Length) merged.Add(arr12b[i]);
+            }
+
+            Console.WriteLine("Alternating Merge: " + string.Join(", ", merged));
+
+
+            // ============= Task 13: Count Frequencies Without Dictionary =============
+            Console.WriteLine("\n======== Task 13: Count Frequencies Without Dictionary ========");
+            int[] arr13 = { 1, 2, 2, 3, 3, 3, 4 };
+
+            List<int> counted = new List<int>();
+
+            foreach (int n in arr13) // n = 1 // ||==> n = 2 // ||==> n = 2 // ||==> n = 3 // ||==> n = 3 // ||==> n = 3 // ||==> n = 4
+            {
+                if (!counted.Contains(n)) // same as dict.ContainsKey(n) but with list  
+                                          // does counted contain 1 (false) n = 1 // ||==> does counted contain 2 (false) n = 2 // ||==> does counted contain 2 (true) n = 2 // ||==> does counted contain 3 (false) n = 3
+                {
+                    int freq = 0;
+                    foreach (int m in arr13) // m = 1 // ||==> m = 2 // ||==> m = 2 // ||==> m = 3 // ||==> m = 3 // ||==> m = 3 // ||==> m = 4
+                    {
+                        if (m == n) freq++;  
+                        // m = 1 n = 1 (true) freq = 1 // ||==> m = 2 n = 1 (false) freq=1 ...
+                        // ||==> m = 2 n = 2 (true) freq = 2 // ||==> m = 3 n = 3 (true) freq = 1 
+                        // ||==> m = 3 n = 3 (true) freq = 2 // ||==> m = 3 n = 3 (true) freq = 3 
+                        // ||==> m = 4 n = 4 (true) freq = 1
+                    }
+                    Console.WriteLine($"{n} appears {freq} times");
+                    counted.Add(n);
+                }
+            }
+
+
+            // ============= Task 14: Find Second Maximum Without Sorting =============
+            Console.WriteLine("\n======== Task 14: Find Second Maximum ========");
+            int[] arr14 = { 5, 1, 9, 3, 7 };
+            int first = int.MinValue;
+            int second = int.MinValue;
+
+            foreach (int n in arr14) // n = 5 //  n = 1 // n = 9 //  n = 3 //  n = 7
+            {
+                if (n > first)
+                // n = 5 > first = int.MinValue (true) // n = 1 > first = 5 (false) 
+                // n = 9 > first = 5 (true) // n = 3 > first = 9 (false) // n = 7 > first = 9 (false)
+                {
+                    // n = 5 , n = 9
+                    second = first; // second = int.MinValue // second = 5
+                    first = n;      // first = 5            // first = 9
+                }
+                else if (n > second && n != first) 
+                    // n = 1 > second = int.MinValue && n = 1 != first = 5 (true) // n = 3 > second = 5 (false) 
+                    // n = 7 > second = 5 && n = 7 != first = 9 (true)
+                {
+                    second = n;
+                }
+            }
+
+            Console.WriteLine("Second Maximum: " + second);
+
+            // ============= Task 20: Build Your Own Remove Method =============
+            Console.WriteLine("\n======== Task 20: Build Your Own Remove Method ========");
+            int[] arr20 = { 1, 2, 3, 2, 4, 2, 5 };
+            int removeValue = 2;
+
+            List<int> result20 = new List<int>();
+
+            foreach (int n in arr20) // n = 1 // ||==> n = 2 // ||==> n = 3 // ||==> n = 2 // ||==> n = 4 // ||==> n = 2 // ||==> n = 5
+            {
+                if (n != removeValue) // n = 1 != 2 (true) // ||==> n = 3 != 2 (true) // ||==> n = 4 != 2 (true) // ||==> n = 5 != 2 (true)
+                    result20.Add(n); // result20 = { 1 } // ||==> result20 = { 1, 3 } // ||==> result20 = { 1, 3, 4 } // ||==> result20 = { 1, 3, 4, 5 }
+            }
+
+            Console.WriteLine("After Removing " + removeValue + ": " + string.Join(", ", result20));
         }
     }
 }
